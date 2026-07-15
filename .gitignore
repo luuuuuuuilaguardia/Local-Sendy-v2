@@ -1,0 +1,16 @@
+# add ... ?
+
+node_modules/
+logs/
+
+.env
+
+dist/
+
+.vscode/
+.idea/
+
+.DS_Store
+Thumbs.db
+ 
+.eslintcache

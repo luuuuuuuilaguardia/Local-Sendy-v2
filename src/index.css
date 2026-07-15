@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(99, 102, 241, 0.3) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(99, 102, 241, 0.25);
+    border-radius: 3px;
+  }
+
+  ::selection {
+    background-color: rgba(99, 102, 241, 0.4);
+    color: white;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/[0.04] backdrop-blur-xl border border-white/[0.08] shadow-xl;
+  }
+
+  .glass-hover {
+    @apply hover:bg-white/[0.07] hover:border-white/[0.12] transition-all duration-200;
+  }
+
+  .glow {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.12), 0 0 80px rgba(99, 102, 241, 0.04);
+  }
+
+  .glow-sm {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.08);
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-400 via-purple-400 to-pink-400 bg-clip-text text-transparent;
+  }
+
+  /* Section label — small caps, spaced out */
+  .section-label {
+    @apply text-[10px] font-semibold tracking-widest uppercase text-gray-600;
+  }
+
+  .btn-primary {
+    @apply px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500
+           text-white font-medium shadow-lg shadow-brand-500/20
+           hover:shadow-brand-500/35 hover:from-brand-500 hover:to-brand-400
+           focus:outline-none focus:ring-2 focus:ring-brand-500/40
+           active:scale-[0.97] transition-all duration-200;
+  }
+
+  .btn-ghost {
+    @apply px-5 py-2.5 rounded-xl border border-white/[0.09] text-gray-400
+           hover:bg-white/[0.05] hover:text-white hover:border-white/[0.15]
+           focus:outline-none focus:ring-2 focus:ring-white/10
+           active:scale-[0.97] transition-all duration-200;
+  }
+
+  .btn-danger {
+    @apply px-5 py-2.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400
+           hover:bg-red-500/20 hover:border-red-500/30 hover:text-red-300
+           focus:outline-none focus:ring-2 focus:ring-red-500/30
+           active:scale-[0.97] transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.09]
+           text-white placeholder-gray-600 focus:outline-none focus:border-brand-500/50
+           focus:ring-2 focus:ring-brand-500/15 transition-all duration-200;
+  }
+
+  /* Device/action card — interactive row */
+  .device-card {
+    @apply flex items-center gap-4 p-4 rounded-xl 
+           bg-white/[0.02] border border-white/[0.06]
+           hover:bg-white/[0.05] hover:border-brand-500/25
+           transition-all duration-200 cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation: fadeIn 0.25s ease-out, slideUp 0.25s ease-out;
+  }
+
+  /* Smooth progress fill */
+  .progress-bar {
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
