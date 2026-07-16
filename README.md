@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Then open the URL shown in the terminal (e.g. `http://192.168.1.5:3000`) on any device on the same network.
+Then open the URL shown in the terminal (e.g. `http://192.168.1.7:3000`) on any device on the same network.
 
 ## Features
 
